@@ -1,12 +1,18 @@
 
+import ImageFundo from './assets/fundo.jpg'
 import './App.css'
 import Title from  './componentes/Title.jsx'
 import Counter from './componentes/Counter';
-import ImageFundo from './assets/fundo.jpg'
+
+import useCountdown from './hooks/useCountdown';
+
+
 
 function App() {
+  const x = useCountdown("Dec 25, 2023, 00:00:00")
   return (
-    <div className="App" style={{backgroundImage: `url(${ImageFundo})`}}>
+    
+    <div className="App" style={{backgroundImage: `url(${ImageFundo})` }}>
       <div className="container">
         <Title title={"Contagem regressiva "}/>
         <div className="countdown-container">
@@ -17,6 +23,7 @@ function App() {
         </div>
       </div>
     </div>
+    
   );
 }
 
